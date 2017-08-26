@@ -1,0 +1,12 @@
+REGISTER piggybank.jar;
+DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage;
+A = LOAD '/flume_sink2/*' USING CSVExcelStorage(',','NO_MULTILINE','UNIX','SKIP_INPUT_HEADER');
+B = FOREACH A GENERATE (int)$15 AS complainID, (chararray)$13 AS timelyResponse;
+C = FILTER B BY timelyResponse=='Yes';
+D = GROUP C all;
+E = FOREACH D GENERATE 'Yes' as timelyResponse, COUNT(C.complainID);
+C = FILTER B BY timelyResponse=='No';
+D = GROUP C all;
+F = FOREACH D GENERATE 'No' as timelyResponse, COUNT(C.complainID);
+G = UNION E, F;
+STORE G INTO '/user/acadgild/project/USAConsumer/ProblemStatement1';
