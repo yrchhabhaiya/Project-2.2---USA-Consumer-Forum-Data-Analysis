@@ -9,6 +9,8 @@ Files:
 
 Copying Dataset using Flume.PDF - Step-by-step execution flume copying dataset from Local file system to HDFS
 
+spool.CONF - Flume configuration file.
+
 SQLSetup.TXT - MySQL Commands to setup environment for Sqoop export.
 
 SqoopExportCommands.SQOOOP - Sqoop commands to export data from PIG Output (HDFS) directory to MySQL Table.
