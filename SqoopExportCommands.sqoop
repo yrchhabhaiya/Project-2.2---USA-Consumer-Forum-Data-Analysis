@@ -1,0 +1,34 @@
+Sqoop export for ProblemStatement 1
+
+sqoop export --connect jdbc:mysql://localhost/db1 \
+--username 'root' -P --table 'TimelyResponse' \
+--export-dir '/user/acadgild/project/USAConsumer/ProblemStatement1/' \
+--input-fields-terminated-by '\t' \
+-m 1
+
+--------------------------------------------------------------------------
+Sqoop export for ProblemStatement 2
+
+sqoop export --connect jdbc:mysql://localhost/db1 \
+--username 'root' -P --table 'ForwardSameDay' \
+--export-dir '/user/acadgild/project/USAConsumer/ProblemStatement2/' \
+--input-fields-terminated-by '\t' \
+-m 1
+
+--------------------------------------------------------------------------
+Sqoop export for ProblemStatement 3
+
+sqoop export --connect jdbc:mysql://localhost/db1 \
+--username 'root' -P --table 'CompaniesWithMaxComplains' \
+--export-dir '/user/acadgild/project/USAConsumer/ProblemStatement3/' \
+--input-fields-terminated-by '\t' \
+-m 1
+
+--------------------------------------------------------------------------
+Sqoop export for ProblemStatement 4
+
+sqoop export --connect jdbc:mysql://localhost/db1 \
+--username 'root' -P --table 'DebtCollectionCount' \
+--export-dir '/user/acadgild/project/USAConsumer/ProblemStatement4/' \
+--input-fields-terminated-by '\t' \
+-m 1
